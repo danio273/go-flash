@@ -1,10 +1,17 @@
 #pragma once
 #include <Arduino.h>
 
-/* ===== DISK CONFIG ===== */
 #define SECTOR_SIZE 512
-#define SECTOR_COUNT 64 // 32 KB
-/* ====================== */
+
+/*
+ Boot  : 1 sector
+ FAT1  : 1 sector
+ FAT2  : 1 sector
+ Root  : 1 sector
+ Data  : 16 sectors (8 KB)
+ Total : 20 sectors
+*/
+#define SECTOR_COUNT 20
 
 /* FAT12 layout */
 #define FAT_START 1
@@ -13,4 +20,5 @@
 #define ROOT_SIZE 1
 #define DATA_START 4
 
-#define INPUT_BUF_SIZE 512
+/* DATA.TXT = 8192 bytes */
+#define INPUT_BUF_SIZE 8192

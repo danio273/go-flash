@@ -24,11 +24,11 @@ void loop()
   msc.goFlag = false;
   disk.deleteGoFile();
 
-  char buffer[INPUT_BUF_SIZE + 1];
+  static char buffer[INPUT_BUF_SIZE + 1];
   memset(buffer, 0, sizeof(buffer));
-  size_t len = disk.readInputFile(buffer, INPUT_BUF_SIZE);
+  size_t len = disk.readData(buffer, INPUT_BUF_SIZE);
 
-  disk.writeOutputFile(buffer, len);
+  disk.writeData(buffer, len);
 
   delay(2000);
   msc.reconnect();
