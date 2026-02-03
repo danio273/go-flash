@@ -21,4 +21,4 @@
 #define DATA_START 4
 
 /* DATA.TXT = 8192 bytes */
-#define INPUT_BUF_SIZE 8192
+#define DATA_BUF_SIZE 8192
